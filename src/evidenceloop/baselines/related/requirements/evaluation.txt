@@ -1,0 +1,8 @@
+bert-score==0.3.13
+rouge-score==0.1.2
+nltk>=3.8,<4
+numpy>=1.26,<3
+scipy>=1.11,<2
+spacy>=3.7,<4
+torch>=2.6,<3
+transformers==4.49.0

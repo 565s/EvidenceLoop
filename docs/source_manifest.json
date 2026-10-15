@@ -1,0 +1,327 @@
+[
+  {
+    "old": "config/data/dataclass.py",
+    "module": "evidenceloop.types",
+    "sha256": "094d601ce6b8eba15e04cb05b3d5ea2bd35396b96065da07e5ce030c94561dd4"
+  },
+  {
+    "old": "agent/base_agent.py",
+    "module": "evidenceloop.agents.base",
+    "sha256": "74d5fc4057efbf8a4c68c876f2c69930790a41193681e0fb470e31d60584a562"
+  },
+  {
+    "old": "agent/proposer_agent.py",
+    "module": "evidenceloop.agents.proposer",
+    "sha256": "746719e75b8b14a7cc491ddb26dca40c7a48b0fd02c6bddb68cf027652f4a2ef"
+  },
+  {
+    "old": "agent/critic_agent.py",
+    "module": "evidenceloop.agents.critic",
+    "sha256": "fb35e8bc2a89721c4e6bfae631c5b21e01780822bf2308c913017a5d331f3266"
+  },
+  {
+    "old": "agent/integrator_agent.py",
+    "module": "evidenceloop.agents.integrator",
+    "sha256": "4d2e89b62d7f9a7d0bd0107bece51502f4b36ce01f69bdf7328008477b45d14a"
+  },
+  {
+    "old": "agent/kg_pipeline_controller.py",
+    "module": "evidenceloop.pipeline.core",
+    "sha256": "f7eb8786ad431276bc3e94bde1b70a18070d9c20406c06e2c6ce707a7c5399ac"
+  },
+  {
+    "old": "model/factory.py",
+    "module": "evidenceloop.runtime.factory",
+    "sha256": "034fe30eb3336983ad260a4ac494812e3921f38cf1ac85646f59b1f4337e0f45"
+  },
+  {
+    "old": "model/direct_critic.py",
+    "module": "evidenceloop.runtime.direct_critic",
+    "sha256": "cff5a34f9abca6eb39fe5ca0984549b3f30e10c7eb37289a9416495b719443b8"
+  },
+  {
+    "old": "utils/config_handler.py",
+    "module": "evidenceloop.settings",
+    "sha256": "75d427285a36b47a05b70c90b85c5b7a747c9d8f292c4f53afc1f52764b0debd"
+  },
+  {
+    "old": "utils/path_tool.py",
+    "module": "evidenceloop.paths",
+    "sha256": "0b46973fc704e2ca36efd37151aeba0f96a3b9a5b88783a3bc60207578562bed"
+  },
+  {
+    "old": "utils/logger_handler.py",
+    "module": "evidenceloop.logging",
+    "sha256": "b681a81aef8210376f6174bfa30414667669f972d20b966ab746f9e6f6fa250b"
+  },
+  {
+    "old": "utils/prompt_loader.py",
+    "module": "evidenceloop.resources.prompt_loader",
+    "sha256": "d60b38c166624b9e34cb1f89b5b410f4dfad5a49cfebcc869e23ca819f79bdfe"
+  },
+  {
+    "old": "utils/document_loader.py",
+    "module": "evidenceloop.data.documents",
+    "sha256": "af0c832cc75f0e09573e57e1180e5671e94e0f4736a826bdd4594bf614160793"
+  },
+  {
+    "old": "utils/triple_validation.py",
+    "module": "evidenceloop.validation",
+    "sha256": "74186a671e7855ff3c4e3f724f59b3a5a67a4e0447f9d5ed59b4631ad77882c2"
+  },
+  {
+    "old": "utils/critic_runtime.py",
+    "module": "evidenceloop.runtime.settings",
+    "sha256": "8fa6a0836cb8acee6e4d79be81d319fcba48426473c2a02b6d2891acc8dcc77a"
+  },
+  {
+    "old": "utils/biored.py",
+    "module": "evidenceloop.data.biored",
+    "sha256": "90511b8c438352f84f0fcfe3be664cf59a074820e49e312e245da13f3c89f6a8"
+  },
+  {
+    "old": "utils/scierc.py",
+    "module": "evidenceloop.data.scierc",
+    "sha256": "0255275f96c74e3506bd153ad7d50d1c9b8683257ea9eb71852d5773ccc50b10"
+  },
+  {
+    "old": "utils/redocred.py",
+    "module": "evidenceloop.data.redocred",
+    "sha256": "ab5aeda95fb4e6b796c1e57b5a49bae21529770c7d8410db91d195f93bb1d172"
+  },
+  {
+    "old": "utils/critic_sft.py",
+    "module": "evidenceloop.data.sft",
+    "sha256": "c68aabda5d06a85d9ef555006951f33756952cc3a01240f057ae829661c30358"
+  },
+  {
+    "old": "utils/critic_sft_statistics.py",
+    "module": "evidenceloop.reports.sft_statistics",
+    "sha256": "dd8c2700f0d459ab11e785f1a86047c8e6ffe361fa38376952a0c3bdd143eb79"
+  },
+  {
+    "old": "utils/critic_sft_phase2_statistics.py",
+    "module": "evidenceloop.reports.phase2_statistics",
+    "sha256": "998879981f70d9041d91e3ae5c1924c5388fb05b864c18f34ad3c5d83aafc044"
+  },
+  {
+    "old": "experiment/run_graphjudge_rebel_10.py",
+    "module": "evidenceloop.pipeline.run",
+    "sha256": "23704b1b2b3a9d78c71835cd00c828ae88f3897e8ef5521dc3806a1594f3bcea"
+  },
+  {
+    "old": "experiment/run_graphjudge_redocred_10.py",
+    "module": "evidenceloop.pipeline.run",
+    "sha256": "32295e56808f097bfb40707da9313a14efe681a8b343e0b37dc0f72e3939ac3a"
+  },
+  {
+    "old": "experiment/run_graphjudge_biored_10.py",
+    "module": "evidenceloop.pipeline.run",
+    "sha256": "e10e8e5391ba65226807ad1311b2d74c38bfe7dd7d655a7754cbf98f04de0b33"
+  },
+  {
+    "old": "experiment/run_graphjudge_scierc_10.py",
+    "module": "evidenceloop.pipeline.run",
+    "sha256": "eb9d7da9e66fe6f2b361764a4072d9e7beb7a8e53cb446d89afeedbad10a722a"
+  },
+  {
+    "old": "experiment/offline_stage_common.py",
+    "module": "evidenceloop.experiments.history",
+    "sha256": "073d19930b7844ba15bd4633f895c0f2d8b4fdab8a2648cf580871c690479579"
+  },
+  {
+    "old": "experiment/run_gpt_baselines.py",
+    "module": "evidenceloop.baselines.extract",
+    "sha256": "c19ad80f0f41ccf15fd39b46b23ba6e280ed9ebc74a5e6037edd5cf475176432"
+  },
+  {
+    "old": "experiment/run_deepseek_baseline.py",
+    "module": "evidenceloop.baselines.extract",
+    "sha256": "0a2a880a2dfeb674fe42b03f0c175c17e2506c9d211e6b80edfa2023370738dc"
+  },
+  {
+    "old": "experiment/run_gpt_proposer_critic_once.py",
+    "module": "evidenceloop.experiments.stages",
+    "sha256": "10c36801874531e82705a90ba6423918a004eeb6af6a8f3aa1fd24934c31ddbf"
+  },
+  {
+    "old": "experiment/run_offline_integrator.py",
+    "module": "evidenceloop.experiments.stages",
+    "sha256": "fc7623268aab4a758aa265a4c7b0ffb88c6e2cfbbc67c131a5157976f72ad7af"
+  },
+  {
+    "old": "experiment/run_offline_final_critic.py",
+    "module": "evidenceloop.experiments.stages",
+    "sha256": "790c366980f5379716132317e4d1325238bf5f3f665e3021aec960ea5c2e6cbf"
+  },
+  {
+    "old": "experiment/run_related_baselines.py",
+    "module": "evidenceloop.baselines.run",
+    "sha256": "dee23154d611ab4dd68f0c2d09b2e8e704091c344c858542d64fc24f178bed95"
+  },
+  {
+    "old": "experiment/prepare_related_baseline_models.py",
+    "module": "evidenceloop.baselines.prepare",
+    "sha256": "2fbc90ab02c0b5537bdcbadbc3a78d76743bd69a51df9da45ed923d5e7846f2e"
+  },
+  {
+    "old": "experiment/evaluate_related_baselines.py",
+    "module": "evidenceloop.evaluation.baselines",
+    "sha256": "cbc969c429ec1f998d2cabca920be40eccfffb1eb1484a17916bed39a8bfa8d5"
+  },
+  {
+    "old": "experiment/evaluate_gpt_proposer_critic_once.py",
+    "module": "evidenceloop.evaluation.critic",
+    "sha256": "b53e7c2253ac962e58c80405b5d50cb612486eeef6c47ac26c146b8badd9e2f6"
+  },
+  {
+    "old": "experiment/evaluate_deepseek_ablation_stages.py",
+    "module": "evidenceloop.evaluation.stages",
+    "sha256": "04a6772fa11e3fb7bfa00eb8866f3c080185e26fdacf6ad8c0983fcec91c5980"
+  },
+  {
+    "old": "experiment/evaluate_redocred_candidate_set_ablation.py",
+    "module": "evidenceloop.evaluation.candidate_sets",
+    "sha256": "52a60ffcf0f1b1e80bf8444e9d62bf8ce313a8d580eb2a1fa1c5d2629b9cbd07"
+  },
+  {
+    "old": "experiment/compare_graphjudge_runs.py",
+    "module": "evidenceloop.reports.runs",
+    "sha256": "d432a8971ff8edb70027a9061ad44ea31acdef2bad7796f3f8628719b6d4b226"
+  },
+  {
+    "old": "experiment/compare_pipeline_variants.py",
+    "module": "evidenceloop.reports.variants",
+    "sha256": "271d32002f6323a368e03612e82ce894ba5deef378e21c137c0bba1c80a64609"
+  },
+  {
+    "old": "experiment/build_redocred_proposal_cache.py",
+    "module": "evidenceloop.experiments.proposal_cache",
+    "sha256": "660851123223e149d625239b7922fb57903ff5ff3d31813bd62ba7ad83d0fa8c"
+  },
+  {
+    "old": "experiment/report_redocred_critic_efficiency.py",
+    "module": "evidenceloop.reports.efficiency",
+    "sha256": "9df98f8a6152cab3e6fff2035a2d99f22df2dec06885d16d6aa61c2188f81183"
+  },
+  {
+    "old": "experiment/summarize_inference_costs.py",
+    "module": "evidenceloop.reports.costs",
+    "sha256": "71e17b810ff7bca33e1068c29b328fde5eb88f066875dffd0119c1832e40b902"
+  },
+  {
+    "old": "eval/evaluate_graphjudge_metrics.py",
+    "module": "evidenceloop.evaluation.graphjudge",
+    "sha256": "d506987c90214589583f83ed9556adaebcb46663c7537c6e3117b4c6416add1a"
+  },
+  {
+    "old": "eval/evaluate_cs_fs.py",
+    "module": "evidenceloop.evaluation.cs_fs",
+    "sha256": "69bb9bb863f6d9af93a853c3d58d7c31cb9d40ad0a60775cc9d8a797f553bce2"
+  },
+  {
+    "old": "scripts/build_critic_sft_dataset.py",
+    "module": "evidenceloop.data.builders.legacy_phase1",
+    "sha256": "071938a46e978d73101d880711895618d01781156c1e7274e1c7b95ee43e65a1"
+  },
+  {
+    "old": "scripts/build_critic_sft_dataset_phase2.py",
+    "module": "evidenceloop.data.builders.rebel_sft",
+    "sha256": "1c636d844717b6f6b58f2b950690c5b7186b8566bdfe4dadbc8b88521ceb3328"
+  },
+  {
+    "old": "scripts/build_redocred_critic_sft_dataset.py",
+    "module": "evidenceloop.data.builders.redocred_sft",
+    "sha256": "154b605795ef7cbe9658238057c2b0873294b6e60a699a1d467e7d91eb128b6b"
+  },
+  {
+    "old": "scripts/build_biored_critic_sft_dataset.py",
+    "module": "evidenceloop.data.builders.biored_sft",
+    "sha256": "f09a6e7b1beed8c88a99a53158b775ae33f10eef0611f8a7ca430b7bcb988344"
+  },
+  {
+    "old": "scripts/build_scierc_critic_sft_dataset.py",
+    "module": "evidenceloop.data.builders.scierc_sft",
+    "sha256": "3c1fbed83cd154ab684464350a5dd3552c6a97f959a690ffc42c56af558e3952"
+  },
+  {
+    "old": "scripts/build_redocred_critic_sft_ablation.py",
+    "module": "evidenceloop.data.builders.candidate_sets",
+    "sha256": "0eea55a1269d5660bc71290c427f47b8e0a1948ba81154824c1936964df71545"
+  },
+  {
+    "old": "scripts/build_rebel_phase2_pipeline_dataset.py",
+    "module": "evidenceloop.data.builders.rebel_documents",
+    "sha256": "ec7177db59d19373a0076e1adc28c7d0d49a63541678e1d4d54ef5735dbf809f"
+  },
+  {
+    "old": "scripts/build_redocred_pipeline_dataset.py",
+    "module": "evidenceloop.data.builders.redocred_documents",
+    "sha256": "797d065c732b5c50a80b0798ec818070482234e315918298444a41ed2fadd883"
+  },
+  {
+    "old": "scripts/build_biored_pipeline_dataset.py",
+    "module": "evidenceloop.data.builders.biored_documents",
+    "sha256": "89ce47ac65497a081c1b5950455592e9e442fb1ec349ca8479f17efa1751be94"
+  },
+  {
+    "old": "scripts/build_scierc_pipeline_dataset.py",
+    "module": "evidenceloop.data.builders.scierc_documents",
+    "sha256": "54767fd5eb51d872faf5e08f8af71129e0509e98bb110482599a4a641416668f"
+  },
+  {
+    "old": "scripts/report_critic_sft_statistics.py",
+    "module": "evidenceloop.reports.sft",
+    "sha256": "0c27f28190c4a8c67e0365537eb9590765505f74ee3d5f423ff454d79ee7edee"
+  },
+  {
+    "old": "scripts/report_critic_sft_phase2_statistics.py",
+    "module": "evidenceloop.reports.phase2",
+    "sha256": "bb45b98b60375f7807f7e1564200a63989a045f3615a993eff3779ad61e89d15"
+  },
+  {
+    "old": "scripts/plot_critic_sft_statistics.py",
+    "module": "evidenceloop.reports.plot_sft",
+    "sha256": "8c0ccc1360f0c0cddda82bbec5f8679e5ff2e26f7f8ce36100cb2a40d1d7226e"
+  },
+  {
+    "old": "training/train_critic_sft.py",
+    "module": "evidenceloop.training.train",
+    "sha256": "959bbc0fe4025d0f3a04e15a6d84fe7415822864b96f784ec1cc4f52ac75ad4b"
+  },
+  {
+    "old": "training/evaluate_critic_sft.py",
+    "module": "evidenceloop.training.evaluate",
+    "sha256": "948f6ba1c0e3a136fecb6e84200bdc7f6cf177cac06785b76349d79d7686166f"
+  },
+  {
+    "old": "training/check_critic_direct.py",
+    "module": "evidenceloop.runtime.check",
+    "sha256": "29d371b7eacdf72b2f3c638ed93f0d6703281cc5e530123cdfd9056f3bc32544"
+  },
+  {
+    "old": "experiment/related_baselines/adapters.py",
+    "module": "evidenceloop.baselines.related.adapters",
+    "sha256": "bb3a35ce8774cd964e0417e7869e8337e06849235da1113b119074751630cdea"
+  },
+  {
+    "old": "experiment/related_baselines/common.py",
+    "module": "evidenceloop.baselines.related.common",
+    "sha256": "db1e4da8bef9f774cc58f2270454a42720ff7cd4d9145ee6420897e112ec4321"
+  },
+  {
+    "old": "experiment/related_baselines/prompts.py",
+    "module": "evidenceloop.baselines.related.prompts",
+    "sha256": "578dc4832a5eec03960f965cf8cadf563f9c4d68744193d802c873e106de657c"
+  },
+  {
+    "old": "experiment/related_baselines/runtime.py",
+    "module": "evidenceloop.baselines.related.runtime",
+    "sha256": "d3bc77d012a5b5be455798e62bfe8c8c25a3b009b46e96103c4f2ce87e5c5101"
+  },
+  {
+    "old": "experiment/related_baselines/training.py",
+    "module": "evidenceloop.baselines.related.training",
+    "sha256": "5a249996dbc56e7ac8d0948050a57872eb62e5627ab720fa6437fd58bca98f20"
+  }
+]

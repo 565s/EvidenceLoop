@@ -1,0 +1,21 @@
+Audit the coverage of the refined knowledge graph and propose source-supported missing facts.
+
+Source Text:
+{source_text}
+
+Refined Knowledge Graph:
+{refined_triples}
+
+Output rules:
+- Output only one valid JSON object.
+- coverage_complete must be a boolean.
+- summary must concisely describe remaining coverage.
+- additions must contain only missing facts. Each item must contain triple, reason, and verbatim evidence.
+- Every triple must contain exactly subject, predicate, and object. Its predicate must be a concise, atomic natural-language phrase on one line and no more than 80 characters.
+- Return an empty additions list when no fact is missing.
+- Do not output entity types, qualifiers, or other fields.
+- Do not output confidence scores.
+- Do not output markdown fences, explanations, or extra text.
+
+Output schema:
+{{"coverage_complete": true, "summary": "...", "additions": [{{"triple": {{"subject": "...", "predicate": "...", "object": "..."}}, "reason": "...", "evidence": "verbatim source text"}}]}}

@@ -1,0 +1,17 @@
+{
+  "experiment": "legacy_phase1",
+  "status": "historical experiment; not the default pipeline",
+  "builder_command": "evidenceloop data legacy-phase1",
+  "builder_options": {
+    "seed": 42,
+    "train_docs": 20000,
+    "validation_docs": 2000,
+    "test_docs": 2000
+  },
+  "training_command": "evidenceloop critic train",
+  "notes": [
+    "Set explicit source_zip/output_dir and train_file/validation_file paths.",
+    "This is a command recipe, not a PipelineConfig file.",
+    "Inspect builder --help and generated metadata before comparing to phase-two experiments."
+  ]
+}

@@ -1,0 +1,6 @@
+langchain-openai==0.3.8
+sentence-transformers==3.4.1
+transformers==4.49.0
+torch>=2.6,<3
+numpy>=1.26,<3
+huggingface-hub>=0.28,<1

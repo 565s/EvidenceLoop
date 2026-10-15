@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=77", "wheel", "packaging>=24.2"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evidenceloop"
+version = "0.1.0"
+description = "Evidence-grounded multi-agent document knowledge graph extraction"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md", "src/evidenceloop/baselines/related/resources/RAKG_LICENSE.txt"]
+dependencies = ["PyYAML>=6,<7", "python-dotenv>=0.21,<2", "langchain-openai>=0.3,<2"]
+
+[project.optional-dependencies]
+critic = ["torch>=2.6,<3", "transformers>=4.49,<6", "peft>=0.17,<1", "accelerate>=1,<2", "safetensors>=0.4", "sentencepiece>=0.2"]
+train = ["evidenceloop[critic]", "datasets>=3,<5"]
+eval = ["numpy>=1.26,<3", "scipy>=1.11,<2", "bert-score==0.3.13", "rouge-score==0.1.2", "nltk>=3.8,<4", "spacy>=3.7,<4", "sentence-transformers>=3.4,<6"]
+plot = ["matplotlib>=3.8,<4", "numpy>=1.26,<3"]
+dev = ["numpy>=1.26,<3", "scipy>=1.11,<2", "matplotlib>=3.8,<4", "spacy>=3.7,<4", "pytest>=7.4,<9", "ruff>=0.11,<1", "build>=1,<2"]
+
+[project.scripts]
+evidenceloop = "evidenceloop.cli:entrypoint"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+evidenceloop = ["resources/prompts/*.txt", "resources/config/*.json", "baselines/related/resources/*", "baselines/related/requirements/*.txt", "baselines/related/README.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+markers = ["integration: requires an explicitly installed third-party baseline"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]

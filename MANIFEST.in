@@ -1,0 +1,20 @@
+include LICENSE THIRD_PARTY_NOTICES.md .env.example
+include module_map.json
+recursive-include docs *.md *.json
+recursive-include configs *.yaml *.json
+recursive-include examples *.jsonl
+recursive-include scripts *.py
+recursive-include tests *.py
+recursive-include src/evidenceloop/resources *.txt *.json
+recursive-include src/evidenceloop/baselines/related/requirements *.txt
+recursive-include src/evidenceloop/baselines/related/resources *.txt *.json
+include src/evidenceloop/baselines/related/README.md
+global-exclude *.py[cod]
+global-exclude .env
+prune .pytest_cache
+prune .ruff_cache
+prune .test_runtime_tmp
+prune build
+prune dist
+include .gitignore
+recursive-include .github/workflows *.yml

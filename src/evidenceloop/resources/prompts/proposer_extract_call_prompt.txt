@@ -1,0 +1,70 @@
+Extract knowledge graph entities and triples from the document in two stages.
+
+Stage 1 - Entity candidates:
+- Identify distinct named entities and relation-relevant literal values explicitly present in the Source Text.
+- Resolve pronouns and aliases to the precise entity name used in the list.
+- Each entity entry must contain exactly one field: name.
+- Deduplicate entities by name.
+
+Stage 2 - Relations:
+- Construct relations only after the entity list is complete.
+- Every relation subject and object must exactly match an entity name in the entity list.
+- Extract only explicit, atomic facts supported by the Source Text.
+- Cover the factual relations expressed in the document; do not prioritize any external task.
+- Generate a concise, atomic natural-language predicate phrase for each relation.
+- Every predicate must be a single line and no more than 80 characters.
+- It is valid to return an empty relations list when the source contains no explicit relation.
+- Avoid duplicate relations.
+- Each relation must contain exactly three fields: subject, predicate, and object.
+- Do not include entity types, qualifiers, or any other relation fields.
+
+Relation schema:
+{{
+  "subject": "string",
+  "predicate": "string",
+  "object": "string"
+}}
+
+Few-shot Example 1
+Source Text:
+Julia Hajdu (8 September 1915 - 23 October 1987) was a Hungarian composer and pianist. She was born in Budapest.
+
+Output:
+{{
+  "entities": [
+    {{"name": "Julia Hajdu"}},
+    {{"name": "8 September 1915"}},
+    {{"name": "23 October 1987"}},
+    {{"name": "Budapest"}}
+  ],
+  "relations": [
+    {{"subject": "Julia Hajdu", "predicate": "date of birth", "object": "8 September 1915"}},
+    {{"subject": "Julia Hajdu", "predicate": "date of death", "object": "23 October 1987"}},
+    {{"subject": "Julia Hajdu", "predicate": "place of birth", "object": "Budapest"}}
+  ]
+}}
+
+Few-shot Example 2
+Source Text:
+Wilk Elektronik is a Polish manufacturer of computer memory based in Laziska Gorne.
+
+Output:
+{{
+  "entities": [
+    {{"name": "Wilk Elektronik"}},
+    {{"name": "computer memory"}},
+    {{"name": "Laziska Gorne"}}
+  ],
+  "relations": [
+    {{"subject": "Wilk Elektronik", "predicate": "product or material produced", "object": "computer memory"}},
+    {{"subject": "Wilk Elektronik", "predicate": "headquarters location", "object": "Laziska Gorne"}}
+  ]
+}}
+
+Now process the following document.
+
+Source Text:
+{text}
+
+Output only one valid JSON object. Put entities before relations and use this exact top-level structure:
+{{"entities": [{{"name": "..."}}], "relations": [{{"subject": "...", "predicate": "...", "object": "..."}}]}}

@@ -1,0 +1,17 @@
+pipeline_variant: full
+proposer_model_name: deepseek-ai/DeepSeek-V4-Flash
+integrator_model_name: deepseek-ai/DeepSeek-V4-Flash
+base_url_env: OPENAI_BASE_URL
+api_key_env: OPENAI_API_KEY
+proposer_temperature: 0.5
+integrator_temperature: 0.5
+offline_integrator_max_tokens: 2048
+offline_integrator_request_timeout: 120.0
+critic_model_name: critic-re-docred-phase2
+critic_base_model_path: models/Qwen3-8B
+critic_adapter_path: outputs/critic_qwen3_8b_lora_redocred_phase2/adapter
+critic_device: cuda:0
+critic_batch_size: 4
+critic_prompt_batch_size: 4
+critic_max_tokens: 1024
+critic_max_seq_length: 8192

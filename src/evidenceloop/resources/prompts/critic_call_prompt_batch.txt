@@ -1,0 +1,29 @@
+Review Stage:
+{review_stage}
+
+Source Text:
+{source_text}
+
+Triples:
+{triples_info}
+
+Output rules:
+- Output only one valid JSON object.
+- Include exactly one result for every input triple.
+- action must be exactly "KEEP", "DELETE", "FIX", or "REWRITE".
+- reason must be concise, source-grounded, and no more than 30 words.
+- evidence must be a verbatim source substring for KEEP, FIX, and REWRITE.
+- evidence must be short: one continuous single-line source substring, preferably no more than 160 characters.
+- Use the shortest evidence span that includes the necessary subject/object or literal mention.
+- Avoid evidence containing double quotes or backslashes when another source substring can support the same decision.
+- If evidence must contain a double quote or backslash, JSON-escape it. Never output raw newlines inside JSON strings.
+- For DELETE, evidence may be a short contradictory source substring; use an empty string when no supporting or contradictory fact exists.
+- triple must be a complete corrected SPO triple with exactly subject, predicate, and object for FIX or REWRITE; otherwise null.
+- A corrected predicate must be a concise, atomic natural-language phrase on one line and no more than 80 characters.
+- Do not output entity types, qualifiers, or other triple fields.
+- Do not output confidence scores.
+- Do not output markdown fences, explanations, or extra text.
+- Keep all JSON string values on one line. Do not copy long passages.
+
+Output schema:
+{{"results": [{{"triple_idx": 0, "action": "FIX", "reason": "...", "evidence": "verbatim source text", "triple": {{"subject": "...", "predicate": "...", "object": "..."}}}}]}}

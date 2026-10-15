@@ -1,0 +1,2 @@
+# Optional, only needed when explicitly enabling --load-in-8bit.
+bitsandbytes>=0.45,<1
