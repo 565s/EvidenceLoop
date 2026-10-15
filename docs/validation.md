@@ -21,6 +21,13 @@ The first GitHub run exposed a publication-only omission: the unanchored `data/`
 
 A separate export of the files eligible for the next commit was verified with the CI environment's empty API credential/endpoint variables: **273 passed, 4 skipped**, with no changes to the existing 44 test files. This also exposed and fixed empty-string versus absent-endpoint normalization in runtime/migrated checkpoint metadata. The fixes preserve inference and evaluation behavior. All 19 data-package files must be included in the next commit alongside these configuration/code changes. A fresh hosted GitHub run remains pending the user's push.
 
+
+## Windows path compatibility
+
+Windows CI also exposed a long-path versus 8.3 short-path mismatch in explicit efficiency-report run selection. Resolving an absolute path expanded its Windows alias, while automatic discovery preserved the supplied spelling. Explicit absolute run paths now keep the caller's spelling, matching discovery; relative paths retain their existing resolution.
+
+The failure was reproduced locally with a real Windows 8.3 alias before applying the fix. The unchanged existing suite was then run from a publishable-file export with `TEMP`, `TMP` and `TMPDIR` pointed to that alias, and API settings empty as in CI: **273 passed, 4 skipped**. All 44 existing test files are unchanged. This verifies the local Windows path case; hosted CI must rerun after pushing the fix.
+
 ## Checks for maintainers
 
 ```sh

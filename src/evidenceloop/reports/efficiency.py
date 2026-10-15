@@ -129,7 +129,9 @@ def select_runs(run_root: Path, explicit: Sequence[str] = ()) -> Dict[str, Path]
         variant = candidate_strategy(variant)
         if variant not in VARIANTS or variant in runs:
             raise ValueError(f"unknown or duplicate --run variant: {variant}")
-        runs[variant] = resolve_path(path)
+        selected = Path(path).expanduser()
+        # Keep absolute path spelling, including Windows 8.3 aliases, as discovery does.
+        runs[variant] = selected if selected.is_absolute() else resolve_path(selected)
     return {
         variant: runs[variant]
         if variant in runs
