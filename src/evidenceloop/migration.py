@@ -163,11 +163,11 @@ def migrate_run(source, destination, input_path, *, dataset, path_mappings=(), c
     )
     new_runtime = manager.runtime_signature()
     new_runtime["proposer_endpoint"] = (
-        runtime.get("proposer_endpoint") if stage == "pipeline" else None
+        (runtime.get("proposer_endpoint") or None) if stage == "pipeline" else None
     )
     if stage == "pipeline" and variant == "full":
-        new_runtime["integrator_endpoint"] = runtime.get("integrator_endpoint") or runtime.get(
-            "proposer_endpoint"
+        new_runtime["integrator_endpoint"] = (
+            runtime.get("integrator_endpoint") or runtime.get("proposer_endpoint") or None
         )
     migrated = {}
     checkpoints = source / "checkpoints"

@@ -102,6 +102,7 @@ class RunManager:
                 os.environ.get(config["base_url_env"])
                 or os.environ.get("OPENAI_BASE_URL")
                 or os.environ.get("SIFLOW_BASE_URL")
+                or None
             )
             if self.stage in {"pipeline", "direct"}
             else None,
@@ -109,6 +110,7 @@ class RunManager:
                 os.environ.get(config["base_url_env"])
                 or os.environ.get("OPENAI_BASE_URL")
                 or os.environ.get("SIFLOW_BASE_URL")
+                or None
             )
             if self.stage == "integrator"
             or (self.stage == "pipeline" and self.pipeline.pipeline_variant == "full")

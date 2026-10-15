@@ -4,6 +4,8 @@ import argparse
 import hashlib
 import json
 import re
+import shutil
+import subprocess
 import tarfile
 import zipfile
 from pathlib import Path
@@ -58,6 +60,30 @@ def inspect(name, data):
     return issues
 
 
+def ignored_package_files():
+    """Catch package files omitted by Git before a source-only checkout loses them."""
+    if not (ROOT / ".git").exists() or shutil.which("git") is None:
+        return []
+    candidates = [
+        path.relative_to(ROOT).as_posix()
+        for path in (ROOT / "src/evidenceloop").rglob("*")
+        if path.is_file() and "__pycache__" not in path.parts
+    ]
+    if not candidates:
+        return []
+    result = subprocess.run(
+        ["git", "check-ignore", "--no-index", "--stdin", "-z"],
+        cwd=ROOT,
+        input="\0".join(candidates) + "\0",
+        capture_output=True,
+        encoding="utf-8",
+        check=False,
+    )
+    if result.returncode not in (0, 1):
+        raise RuntimeError("Cannot verify Git ignore rules: " + result.stderr.strip())
+    return [f"package file excluded by Git: {name}" for name in result.stdout.split("\0") if name]
+
+
 def archive_entries(path):
     if zipfile.is_zipfile(path):
         with zipfile.ZipFile(path) as archive:
@@ -88,6 +114,7 @@ def main():
     if args.artifact:
         entries = (item for archive in args.artifact for item in archive_entries(archive))
     else:
+        issues.extend(ignored_package_files())
         paths = [ROOT / name for name in SOURCE_FILES if (ROOT / name).is_file()]
         paths += [
             p

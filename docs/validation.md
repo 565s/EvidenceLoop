@@ -14,6 +14,13 @@ Verification date: 2026-10-15. Local environment: Windows, Python 3.12.7. All ch
 
 Independent wheel and editable installations both passed in a separate virtual environment, invoked from outside the checkout. The installed console entry, all modules, 41 help routes, lazy Pipeline construction, packaged prompts/relation maps and the baseline implementation fingerprint were checked. Existing local base dependencies were reused with `--no-deps`/`--no-index`; fresh dependency resolution across all extras was not performed. Model imports, client creation and network connections were blocked for the import/help checks.
 
+
+## Git publication verification
+
+The first GitHub run exposed a publication-only omission: the unanchored `data/` ignore rule excluded the 19 source files under `src/evidenceloop/data/`. Local tests originally saw these untracked files. Generated-directory ignore patterns are now anchored to the repository root, and the source release audit detects package files excluded by Git when a checkout and Git executable are available.
+
+A separate export of the files eligible for the next commit was verified with the CI environment's empty API credential/endpoint variables: **273 passed, 4 skipped**, with no changes to the existing 44 test files. This also exposed and fixed empty-string versus absent-endpoint normalization in runtime/migrated checkpoint metadata. The fixes preserve inference and evaluation behavior. All 19 data-package files must be included in the next commit alongside these configuration/code changes. A fresh hosted GitHub run remains pending the user's push.
+
 ## Checks for maintainers
 
 ```sh
