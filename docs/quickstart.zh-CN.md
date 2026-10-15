@@ -22,6 +22,14 @@ evidenceloop data validate examples/documents.jsonl
 
 ## 准备真实推理
 
+也可在项目根目录使用依赖文件，安装包含本地 Critic、训练、评测和绘图的研究环境：
+
+```sh
+python -m pip install -r requirements.txt
+```
+
+`requirements.txt` 引用 `pyproject.toml` 中的依赖分组，版本约束只在后者维护。第三方基线继续使用独立环境及其各自的依赖文件。
+
 安装 `python -m pip install -e ".[critic]"`，准备支持 BF16 的 CUDA 环境、本地 Qwen3-8B 基座和对应数据集的 LoRA `adapter` 目录。四份 `configs/*.yaml` 提供完整字段模板，路径需按实际位置修改。未知权重下载地址未填写，也不会自动下载。
 
 复制 `.env.example` 到私人文件填写 `OPENAI_BASE_URL`、`OPENAI_API_KEY`，或在 shell 设置环境变量。模板不带默认服务地址；历史 `SIFLOW_BASE_URL`、`SIFLOW_API_KEY` 仍可作为读取别名。不要把真实密钥纳入版本控制。

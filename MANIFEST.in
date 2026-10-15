@@ -1,5 +1,5 @@
 include LICENSE THIRD_PARTY_NOTICES.md .env.example
-include module_map.json
+include module_map.json requirements.txt
 recursive-include docs *.md *.json
 recursive-include configs *.yaml *.json
 recursive-include examples *.jsonl

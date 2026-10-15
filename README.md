@@ -14,6 +14,14 @@ evidenceloop --help
 python -m evidenceloop --help
 ```
 
+To install the research environment with local Critic inference, training, evaluation and plotting, run from the repository root:
+
+```sh
+python -m pip install -r requirements.txt
+```
+
+`requirements.txt` references the extras in `pyproject.toml`, which remains the single source of dependency version constraints. Development tools and third-party baseline environments are installed separately.
+
 Choose extras for the work you intend to run:
 
 | Extra | Purpose |

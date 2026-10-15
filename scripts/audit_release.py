@@ -15,6 +15,7 @@ SOURCE_FILES = (
     "LICENSE",
     "THIRD_PARTY_NOTICES.md",
     "pyproject.toml",
+    "requirements.txt",
     "MANIFEST.in",
     "module_map.json",
     ".gitignore",

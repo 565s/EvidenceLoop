@@ -1,0 +1,6 @@
+# Run from the repository root: python -m pip install -r requirements.txt
+# Research environment: pipeline, local Critic, training, evaluation, and plots.
+# Dependency versions are maintained in pyproject.toml.
+# Install a CUDA-compatible PyTorch build first when using the local Critic.
+# Third-party baselines keep their own isolated requirements/environments.
+-e .[critic,train,eval,plot]
